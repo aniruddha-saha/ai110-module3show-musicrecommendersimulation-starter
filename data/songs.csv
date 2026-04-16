@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,LoFi Rain,Night Beats,lofi,calm,0.3,70,0.4,0.5,0.8
+12,Desert Wind,Ambient Flow,ambient,peaceful,0.2,60,0.5,0.3,0.9
+13,Metal Surge,Iron Pulse,metal,intense,0.95,160,0.6,0.6,0.1
+14,Indie Bloom,Summer Youth,indie,happy,0.6,110,0.7,0.7,0.3
+15,Deep Focus,Study Zone,classical,focused,0.2,65,0.5,0.2,0.95
+16,Club Night,Beat Masters,edm,energetic,0.9,128,0.8,0.9,0.05
+17,Sad Piano,Emotional Keys,classical,sad,0.3,75,0.2,0.3,0.9
+18,Chill Sunset,Coastal Waves,chill,relaxed,0.4,90,0.6,0.6,0.7
