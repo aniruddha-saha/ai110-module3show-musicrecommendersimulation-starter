@@ -71,23 +71,28 @@ def score_song(user_prefs, song):
 
     # GENRE
     if song["genre"] == user_prefs["genre"]:
-        score += 40
-        reasons.append("genre match")
+        score += 20
+        reasons.append("genre match (+40)")
 
     # MOOD
     if song["mood"] == user_prefs["mood"]:
         score += 30
-        reasons.append("mood match")
+        reasons.append("mood match (+30)")
 
     # ENERGY
     energy_diff = abs(song["energy"] - user_prefs["energy"])
-    energy_score = max(0, 1 - energy_diff) * 20
+    energy_score = max(0, 1 - energy_diff) * 40
     score += energy_score
-    reasons.append("energy similarity")
+
+    if energy_score > 15:
+        reasons.append(f"very close energy (+{energy_score:.1f})")
+    elif energy_score > 8:
+        reasons.append(f"moderate energy match (+{energy_score:.1f})")
 
     return score, reasons
 
-def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
+
+def recommend_songs(user_prefs, songs, k=5):
     results = []
 
     for song in songs:
@@ -96,7 +101,6 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
 
         results.append((song, score, explanation))
 
-    # SORT by score descending
     results.sort(key=lambda x: x[1], reverse=True)
 
     return results[:k]
